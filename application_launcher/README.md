@@ -14,3 +14,7 @@ This will install binary in `~/.local/bin`
 cd ~/.local/bin
 rm vapplauncher
 ```
+
+# how it looks
+
+![launcher](launcher.png)
