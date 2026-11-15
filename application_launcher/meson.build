@@ -12,11 +12,16 @@ rapifuzz = declare_dependency(
   include_directories: include_directories('vendor/rapidfuzz', is_system: true),
 )
 
+gnome = import('gnome')
+
+app_resources = gnome.compile_resources('app-resources', 'resources.gresource.xml', source_dir: '.', c_name: 'app')
+
 executable(
   'vapplauncher',
   'main.cc',
   'launcher.cc',
   'entry.cc',
+  app_resources,
   dependencies: [gtk, rapifuzz],
-  install: true
+  install: true,
 )

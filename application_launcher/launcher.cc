@@ -67,7 +67,7 @@ Launcher::Launcher()
   add_controller(key_controller);
 
   auto css_provider = Gtk::CssProvider::create();
-  css_provider->load_from_path("styles.css");
+  css_provider->load_from_resource("/com/vardhanbattula/wm-components/application_launcher/styles.css");
   Gtk::StyleContext::add_provider_for_display(Gdk::Display::get_default(), css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
 
   // classes for css
