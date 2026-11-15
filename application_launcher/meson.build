@@ -13,9 +13,10 @@ rapifuzz = declare_dependency(
 )
 
 executable(
-  'application_launcher',
+  'vapplauncher',
   'main.cc',
   'launcher.cc',
   'entry.cc',
-  dependencies: [gtk, rapifuzz]
+  dependencies: [gtk, rapifuzz],
+  install: true
 )

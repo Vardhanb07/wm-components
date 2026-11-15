@@ -5,7 +5,6 @@
 #include "glibmm/ustring.h"
 
 #include <algorithm>
-#include <execution>
 #include <iostream>
 #include <memory>
 #include <rapidfuzz/distance/LCSseq.hpp>
@@ -47,18 +46,17 @@ void Entry::exec_app(std::string app_name) {
   }
 }
 
-auto Entry::fuzz_query_apps(std::string query) -> std::vector<Glib::ustring> {
+auto Entry::fuzz_query_apps(Glib::ustring query) -> std::vector<Glib::ustring> {
   std::vector<std::pair<Glib::ustring, int>> v;
   for (auto &app : apps) {
-    double score = rapidfuzz::fuzz::ratio(query, app->name, 60.0);
-    if (score != 0.0) {
-      app->lcs_score = rapidfuzz::lcs_seq_similarity(query, app->name, 1);
-      if (app->lcs_score != 0) {
-        v.push_back({app->name, app->lcs_score});
-      }
+    Glib::ustring name = Glib::ustring(app->name);
+    app->score = rapidfuzz::fuzz::partial_ratio(query.lowercase().c_str(),
+                                                name.lowercase().c_str(), 50.0);
+    if (app->score != 0.0) {
+      v.push_back({app->name, app->score});
     }
   }
-  std::sort(std::execution::par, v.begin(), v.end(),
+  std::sort(v.begin(), v.end(),
             [&](std::pair<Glib::ustring, int> a,
                 std::pair<Glib::ustring, int> b) -> bool {
               return a.second > b.second;

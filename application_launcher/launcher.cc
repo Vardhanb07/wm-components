@@ -109,5 +109,7 @@ void Launcher::on_search_changed() {
   if (!query.empty()) {
     stringList->splice(0, stringList->get_n_items(),
                        entry->fuzz_query_apps(query));
+    return;
   }
+  stringList->splice(0, stringList->get_n_items(), entry->get_app_names());
 }
