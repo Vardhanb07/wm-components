@@ -1,0 +1,3 @@
+- [x] application launcher 
+- [ ] lock screen
+- [ ] status bar
