@@ -1,6 +1,8 @@
 #include "launcher.h"
 #include "entry.h"
 #include "gdk/gdkkeysyms.h"
+#include "gdkmm/display.h"
+#include "gtk/gtk.h"
 #include "gtk4-layer-shell.h"
 #include "gtkmm/box.h"
 #include "gtkmm/enums.h"
@@ -14,7 +16,11 @@
 #include "gtkmm/widget.h"
 #include "pangomm/layout.h"
 #include "sigc++/functors/mem_fun.h"
+#include "gtkmm/stylecontext.h"
+#include "gtkmm/cssprovider.h"
 
+
+#include <fontconfig/fontconfig.h>
 #include <memory>
 
 Launcher::Launcher()
@@ -59,6 +65,16 @@ Launcher::Launcher()
   key_controller->signal_key_pressed().connect(
       sigc::mem_fun(*this, &Launcher::on_key_pressed), false);
   add_controller(key_controller);
+
+  auto css_provider = Gtk::CssProvider::create();
+  css_provider->load_from_path("styles.css");
+  Gtk::StyleContext::add_provider_for_display(Gdk::Display::get_default(), css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
+
+  // classes for css
+  add_css_class("launcher");
+  vBox.add_css_class("vbox");
+  searchEntry.add_css_class("search-entry");
+  listView.add_css_class("list-view");
 }
 
 Launcher::~Launcher() {}

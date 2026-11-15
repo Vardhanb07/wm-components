@@ -1,0 +1,170 @@
+* {
+  color: #ffffff;
+}
+
+window.launcher,
+window.background.launcher,
+.launcher {
+  background-color: #000000;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.vbox {
+  background-color: transparent;
+}
+
+/* Search Entry */
+entry.search-entry,
+.search-entry {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  outline: none;
+  box-shadow: none;
+}
+
+entry.search-entry text,
+.search-entry text {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+entry.search-entry placeholder,
+.search-entry placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+entry.search-entry image,
+.search-entry image {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+entry.search-entry image:hover,
+.search-entry image:hover {
+  color: #ffffff;
+}
+
+entry.search-entry:focus,
+entry.search-entry:focus-within,
+.search-entry:focus,
+.search-entry:focus-within {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  box-shadow: none;
+}
+
+/* Scrolled Window & List View */
+scrolledwindow {
+  background-color: transparent;
+  border: none;
+}
+
+scrolledwindow undershoot,
+scrolledwindow overshoot {
+  background: none;
+}
+
+listview,
+.list-view {
+  background-color: transparent;
+  border: none;
+}
+
+/* 1. Base list item styling (GTK4 ListView rows) */
+listview row,
+.list-view row,
+listitem {
+  padding: 8px 12px;
+  border-radius: 0;
+  margin: 4px 8px;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Force the label inside to be white, overriding any default system theme */
+listview row label,
+.list-view row label,
+listitem label {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* 2. The default selected item (grey) */
+listview row:selected,
+listview row.activatable:selected,
+listview:not(:focus-within) row:selected,
+.list-view row:selected,
+listitem:selected {
+  background-color: #2a2a2a; /* Light grey / less intensive black */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+  outline: none;
+}
+
+/* 3. When you hover or change to an item (blue) */
+listview row:hover,
+listview row.activatable:hover,
+.list-view row:hover,
+listitem:hover {
+  background-color: #007aff;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+/* Ensures the selected item also turns blue when hovered */
+listview row:selected:hover,
+listview row.activatable:selected:hover,
+.list-view row:selected:hover,
+listitem:selected:hover {
+  background-color: #007aff;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+/* Active / pressed state */
+listview row:active,
+listview row.activatable:active,
+.list-view row:active {
+  background-color: #0062cc;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+/* Scrollbar */
+scrollbar {
+  background-color: transparent;
+  border: none;
+}
+
+scrollbar trough {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+scrollbar slider {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  min-width: 6px;
+  min-height: 24px;
+  border: none;
+}
+
+scrollbar slider:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+scrollbar slider:active {
+  background-color: rgba(255, 255, 255, 0.45);
+}
