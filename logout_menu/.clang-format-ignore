@@ -1,0 +1,6 @@
+*.css
+*.xml
+*.png
+*.json
+meson.build
+build*

@@ -1,3 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
+   <gresource prefix="/com/vardhanbattula/wm-components/logout_menu">
+     <file>icons/lock.png</file>
+     <file>icons/logout.png</file>
+     <file>icons/reboot.png</file>
+     <file>icons/shutdown.png</file>
+     <file>icons/sleep.png</file>
+     <file>styles.css</file>
+   </gresource>
 </gresources>

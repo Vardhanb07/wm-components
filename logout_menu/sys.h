@@ -2,6 +2,12 @@
 
 class Sys {
 public:
-  Sys();
+  Sys() = default;
   ~Sys() = default;
+
+  void shutdown();
+  void sleep();
+  void lock();
+  void logout();
+  void reboot();
 };

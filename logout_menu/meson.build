@@ -14,7 +14,7 @@ app_resources = gnome.compile_resources(
   'logout-menu-resources',
   'resources.gresource.xml',
   source_dir: '.',
-  c_name: 'logout-menu',
+  c_name: 'logout_menu',
 )
 
 executable(

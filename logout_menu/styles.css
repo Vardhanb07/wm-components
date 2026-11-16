@@ -1,0 +1,155 @@
+/* Make all text white globally */
+* {
+  color: #ffffff;
+}
+
+/* The main window background - a bit black with opacity */
+window.logout-menu,
+window.background.logout-menu,
+.logout-menu,
+.logout-menu.background,
+window.logout-menu:backdrop,
+window.background.logout-menu:backdrop,
+.logout-menu:backdrop,
+.logout-menu.background:backdrop {
+  background: rgba(0, 0, 0, 0.50);
+  background-color: rgba(0, 0, 0, 0.65);
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Boxes & Layout */
+box,
+.hbox,
+.vbox,
+.logout-box {
+  background: transparent;
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Action boxes (buttons containing image + label) styled a bit black */
+button,
+button.flat,
+button.logout-button,
+window.logout-menu button,
+.logout-menu button {
+  background: rgba(20, 20, 20, 0.85);
+  background-color: rgba(20, 20, 20, 0.85);
+  background-image: none;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  padding: 16px;
+  margin: 4px;
+  transition: background-color 150ms ease, background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+/* Normal backdrop state - keep the dark box background */
+button:backdrop,
+button.flat:backdrop,
+button.logout-button:backdrop,
+window.logout-menu button:backdrop,
+.logout-menu button:backdrop {
+  background: rgba(20, 20, 20, 0.85);
+  background-color: rgba(20, 20, 20, 0.85);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* Hover state - blue background on the boxes */
+button:hover,
+button.flat:hover,
+button.logout-button:hover,
+button:backdrop:hover,
+button.flat:backdrop:hover,
+button.logout-button:backdrop:hover,
+window.logout-menu button:hover,
+window.logout-menu button:backdrop:hover,
+.logout-menu button:hover,
+.logout-menu button:backdrop:hover,
+button:focus:hover,
+button.flat:focus:hover,
+button.logout-button:focus:hover,
+window.logout-menu button:focus:hover,
+.logout-menu button:focus:hover {
+  background: #007aff;
+  background-color: #007aff;
+  background-image: none;
+  box-shadow: none;
+  border: 1px solid #007aff;
+  color: #ffffff;
+}
+
+/* Focus states */
+button:focus,
+button.flat:focus,
+button.logout-button:focus,
+window.logout-menu button:focus,
+.logout-menu button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:focus-visible,
+button.flat:focus-visible,
+button.logout-button:focus-visible,
+window.logout-menu button:focus-visible,
+.logout-menu button:focus-visible {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Active / clicked state - darker blue */
+button:active,
+button.flat:active,
+button.logout-button:active,
+button:backdrop:active,
+window.logout-menu button:active,
+window.logout-menu button:backdrop:active,
+.logout-menu button:active,
+.logout-menu button:backdrop:active {
+  background: #0062cc;
+  background-color: #0062cc;
+  background-image: none;
+  box-shadow: none;
+  border: 1px solid #0062cc;
+  color: #ffffff;
+}
+
+/* White text for button labels */
+button label,
+button.flat label,
+button.logout-button label,
+window.logout-menu button label,
+.logout-menu button label {
+  color: #ffffff;
+  margin-top: 12px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+button:hover label,
+button:backdrop:hover label,
+button.flat:hover label,
+button.logout-button:hover label,
+window.logout-menu button:hover label,
+.logout-menu button:hover label {
+  color: #ffffff;
+}
+
+/* Button image styling */
+button image,
+button.flat image,
+button.logout-button image,
+window.logout-menu button image,
+.logout-menu button image {
+  background: transparent;
+  background-color: transparent;
+  background-image: none;
+}
