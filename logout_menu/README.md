@@ -18,3 +18,10 @@ rm vlogout
 # how it looks
 
 ![logout-menu](logout-menu.png)
+
+# deps
+- gtkmm(gtk4)
+- gtk4-layer-shell
+
+# note
+Installation requires deps
