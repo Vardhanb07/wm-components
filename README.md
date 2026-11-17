@@ -2,3 +2,5 @@
 - [ ] lock screen
 - [ ] status bar
 - [x] logout menu
+- [ ] wifi manager
+- [ ] app switcher
