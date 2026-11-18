@@ -20,8 +20,8 @@
 #include <unistd.h>
 #include <vector>
 
-Menu::Menu()
-    : hBox(Gtk::Orientation::HORIZONTAL, 10), sys(std::make_unique<Sys>()) {
+Menu::Menu(json config)
+    : hBox(Gtk::Orientation::HORIZONTAL, 10), sys(std::make_unique<Sys>(config)) {
   gtk_layer_init_for_window(gobj());
   gtk_layer_set_layer(gobj(), GTK_LAYER_SHELL_LAYER_TOP);
 

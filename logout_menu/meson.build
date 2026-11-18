@@ -8,6 +8,8 @@ project(
 
 gtk = [dependency('gtkmm-4.0'), dependency('gtk4-layer-shell-0')]
 
+json = declare_dependency(include_directories: include_directories('vendor/json/include'))
+
 gnome = import('gnome')
 
 app_resources = gnome.compile_resources(
@@ -22,7 +24,8 @@ executable(
   'main.cc',
   'menu.cc',
   'sys.cc',
+  'utils.cc',
   app_resources,
-  dependencies: [gtk],
+  dependencies: [gtk, json],
   install: true,
 )

@@ -1,15 +1,36 @@
 #include "sys.h"
 #include "glibmm/spawn.h"
 
-void Sys::shutdown() { Glib::spawn_command_line_async("systemctl poweroff"); }
+#include <nlohmann/json.hpp>
+#include <ostream>
+#include <string>
+#include <iostream>
 
-void Sys::sleep() { Glib::spawn_command_line_async("systemctl suspend"); }
+using nlohmann::json;
 
-void Sys::lock() { Glib::spawn_command_line_async("loginctl lock-session"); }
+Sys::Sys(json config) : config(config) {}
 
-void Sys::logout() {
-  Glib::spawn_command_line_async(
-      "sh -c 'loginctl kill-session $XDG_SESSION_ID'");
+void Sys::shutdown() {
+  std::string shutdown_cmd = config["shutdown"]["cmd"];
+  Glib::spawn_command_line_async(shutdown_cmd);
 }
 
-void Sys::reboot() { Glib::spawn_command_line_async("systemctl reboot"); }
+void Sys::sleep() {
+  std::string sleep_cmd = config["sleep"]["cmd"];
+  Glib::spawn_command_line_async(sleep_cmd);
+}
+
+void Sys::lock() {
+  std::string lock_cmd = config["lock"]["cmd"];
+  Glib::spawn_command_line_async(lock_cmd);
+}
+
+void Sys::logout() {
+  std::string logout_cmd = config["logout"]["cmd"];
+  Glib::spawn_command_line_async(logout_cmd);
+}
+
+void Sys::reboot() {
+  std::string reboot_cmd = config["reboot"]["cmd"];
+  Glib::spawn_command_line_async(reboot_cmd);
+}

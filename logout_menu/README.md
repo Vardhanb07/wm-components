@@ -1,7 +1,7 @@
 # installation
 
-```bash 
-meson setup build 
+```bash
+meson setup build
 meson configure build -Dbuildtype=release -Dprefix=~/.local
 meson install -C build
 ```
@@ -19,9 +19,33 @@ rm vlogout
 
 ![logout-menu](logout-menu.png)
 
+# example config
+
+```json
+{
+  "shutdown": {
+    "cmd": ""
+  },
+  "sleep": {
+    "cmd": ""
+  },
+  "reboot": {
+    "cmd": ""
+  },
+  "logout": {
+    "cmd": ""
+  },
+  "lock": {
+    "cmd": ""
+  }
+}
+```
+
 # deps
+
 - gtkmm(gtk4)
 - gtk4-layer-shell
 
 # note
+
 Installation requires deps

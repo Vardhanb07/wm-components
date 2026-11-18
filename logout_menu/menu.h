@@ -9,7 +9,7 @@
 
 class Menu : public Gtk::Window {
 public:
-  Menu();
+  Menu(json config);
   virtual ~Menu();
 
 protected:

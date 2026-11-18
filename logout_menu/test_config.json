@@ -1,0 +1,17 @@
+{
+  "shutdown": {
+    "cmd": "echo shutdown"
+  },
+  "sleep": {
+    "cmd": "echo sleep"
+  },
+  "reboot": {
+    "cmd": "echo reboot"
+  },
+  "logout": {
+    "cmd": "echo logout"
+  },
+  "lock": {
+    "cmd": "echo lock"
+  }
+}

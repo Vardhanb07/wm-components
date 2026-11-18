@@ -1,3 +1,6 @@
 [submodule "application_launcher/vendor/rapidfuzz"]
 	path = application_launcher/vendor/rapidfuzz
 	url = https://github.com/rapidfuzz/rapidfuzz-cpp.git
+[submodule "logout_menu/vendor/json"]
+	path = logout_menu/vendor/json
+	url = https://github.com/nlohmann/json.git
