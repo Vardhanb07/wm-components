@@ -1,5 +1,4 @@
 - [x] application launcher 
-- [ ] lock screen
 - [ ] status bar
 - [x] logout menu
 - [ ] wifi manager
